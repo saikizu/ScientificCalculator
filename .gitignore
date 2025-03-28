@@ -75,3 +75,5 @@ crashlytics-build.properties
 
 # Unity generated files
 /Temp/Obj/Library/Logs/MemoryCaptures/Build/Builds/
+
+.fake

@@ -144,6 +144,7 @@ public class Calculation
                 foreach (Match group in groups)
                 {
                     MathTexDraw i = new(group.Value, method);
+                    Debug.Log(group.Value);
                     if (i.Success)
                     {
                         output = output.Replace(i.Input, i.Output.ToString());
@@ -257,7 +258,7 @@ public class Calculation
         public Regex Log { get => new(@"\\log(_\{[0-9.]+\}×)?(-?[0-9.]+)"); }
         public Regex Pow { get => new(@"([0-9.]+)\^{(-?[0-9.]+)}"); }
         public Regex SinCosTan { get => new(@"\\(sin|cos|tan|asin|acos|atan)(-?[0-9.]+)"); }
-        public Regex Factor { get => new(@"{([0-9.]+)}!"); }
+        public Regex Factor { get => new(@"{([-0-9.]+)}!"); }
         public List<Regex> Methods { get => new() {
             Frac, Log, Pow, SinCosTan, Factor }; }
         public Regex Method { get; set; }
